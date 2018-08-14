@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <mbsc-form>
+    <mbsc-input [(ngModel)]="todoDate" mbsc-calendar>Date</mbsc-input>
+  </mbsc-form>
+  <mbsc-listview [options]="todoList" mbsc-enhance>
+    <mbsc-listview-item *ngFor="let item of todoData" data-id="{{item.id}}">
+      {{item.text}}
+      <input type="checkbox">
+    </mbsc-listview-item>
+  </mbsc-listview>
+</ion-content>
