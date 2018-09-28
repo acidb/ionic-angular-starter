@@ -5,37 +5,28 @@
 </ion-header>
 
 <ion-content>
-  <mbsc-form>
-    <div class="mbsc-form-group">
-
-      <div class="mbsc-form-group-title">Personal data</div>
-
-      <mbsc-input value="Angelica">First Name</mbsc-input>
-
-      <mbsc-input value="Geary">Last Name</mbsc-input>
-
-      <mbsc-input [(ngModel)]="language" mbsc-select [mbsc-options]="languageSettings">Language</mbsc-input>
-
-      <mbsc-input mbsc-date [mbsc-options]="birthdaySettings" [(ngModel)]="birthday">Birthday</mbsc-input>
-
-      <mbsc-segmented-group [(ngModel)]="gender">
-        <mbsc-segmented value="male">Male</mbsc-segmented>
-        <mbsc-segmented value="female">Female</mbsc-segmented>
-      </mbsc-segmented-group>
-
-    </div>
-    <div class="mbsc-form-group">
-
-      <div class="mbsc-form-group-title">Personal data</div>
-
-      <mbsc-input value="angelica.geary@gmail.com" type="email">Email</mbsc-input>
-
-      <mbsc-input type="password" [password-toggle]="true">Password</mbsc-input>
-
-      <div class="mbsc-btn-group-block">
-        <mbsc-button>Save</mbsc-button>
+  <mbsc-page>
+    <mbsc-form>
+      <div class="mbsc-form-group">
+        <div class="mbsc-form-group-title">Personal data</div>
+        <mbsc-input value="Angelica">First Name</mbsc-input>
+        <mbsc-input value="Geary">Last Name</mbsc-input>
+        <mbsc-select [(ngModel)]="language" [options]="languageSettings">Language</mbsc-select>
+        <mbsc-date [options]="birthdaySettings" [(ngModel)]="birthday">Birthday</mbsc-date>
+        <mbsc-segmented-group [(ngModel)]="gender">
+          <mbsc-segmented value="male">Male</mbsc-segmented>
+          <mbsc-segmented value="female">Female</mbsc-segmented>
+        </mbsc-segmented-group>
       </div>
 
-    </div>
-  </mbsc-form>
+      <div class="mbsc-form-group">
+        <div class="mbsc-form-group-title">Personal data</div>
+        <mbsc-input value="angelica.geary@gmail.com" type="email">Email</mbsc-input>
+        <mbsc-input type="password" [password-toggle]="true">Password</mbsc-input>
+      </div>
+      <div class="mbsc-padding">
+        <mbsc-button block>Save</mbsc-button>
+      </div>
+    </mbsc-form>
+  </mbsc-page>
 </ion-content>

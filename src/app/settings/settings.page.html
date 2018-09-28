@@ -5,31 +5,33 @@
 </ion-header>
 
 <ion-content>
-  <mbsc-form>
-    <div class="mbsc-form-group">
-      <div class="mbsc-form-group-title">Sound </div>
-      <mbsc-slider [(value)]="sound.ring" icon="phone">Ring</mbsc-slider>
-      <mbsc-slider [(value)]="sound.media" icon="music">Media</mbsc-slider>
-      <mbsc-slider [(value)]="sound.alarm" icon="alarm2">Alarm</mbsc-slider>
-    </div>
-    <div class="mbsc-form-group">
-      <div class="mbsc-form-group-title">Switch</div>
-      <mbsc-switch [(ngModel)]="notifications.enable"> Enable notifications
-        <span class="mbsc-desc">Allow notifications on this device</span>
-      </mbsc-switch>
-      <mbsc-switch [(ngModel)]="notifications.message"> Message
-        <span class="mbsc-desc">Get notifications when someone sends you a message</span>
-      </mbsc-switch>
-      <mbsc-switch [(ngModel)]="notifications.birthdays"> Birthdays
-        <span class="mbsc-desc">Get notifications about your friends' birthdays</span>
-      </mbsc-switch>
-      <mbsc-switch [(ngModel)]="notifications.tags"> Tags
-        <span class="mbsc-desc">Get notifications when you're tagged</span>
-      </mbsc-switch>
-    </div>
-    <div class="mbsc-form-group">
-      <div class="mbsc-form-group-title">Security</div>
-      <mbsc-input mbsc-numpad [mbsc-options]="pinSettings">Set PIN</mbsc-input>
-    </div>
-  </mbsc-form>
+  <mbsc-page>
+    <mbsc-form>
+      <div class="mbsc-form-group">
+        <div class="mbsc-form-group-title">Sound </div>
+        <mbsc-slider [(value)]="sound.ring" icon="phone">Ring</mbsc-slider>
+        <mbsc-slider [(value)]="sound.media" icon="music">Media</mbsc-slider>
+        <mbsc-slider [(value)]="sound.alarm" icon="alarm2">Alarm</mbsc-slider>
+      </div>
+      <div class="mbsc-form-group">
+        <div class="mbsc-form-group-title">Switch</div>
+        <mbsc-switch [(ngModel)]="notifications.enable"> Enable notifications
+          <span class="mbsc-desc">Allow notifications on this device</span>
+        </mbsc-switch>
+        <mbsc-switch [(ngModel)]="notifications.message" [disabled]="!notifications.enable"> Message
+          <span class="mbsc-desc">Get notifications when someone sends you a message</span>
+        </mbsc-switch>
+        <mbsc-switch [(ngModel)]="notifications.birthdays" [disabled]="!notifications.enable"> Birthdays
+          <span class="mbsc-desc">Get notifications about your friends' birthdays</span>
+        </mbsc-switch>
+        <mbsc-switch [(ngModel)]="notifications.tags" [disabled]="!notifications.enable"> Tags
+          <span class="mbsc-desc">Get notifications when you're tagged</span>
+        </mbsc-switch>
+      </div>
+      <div class="mbsc-form-group">
+        <div class="mbsc-form-group-title">Security</div>
+        <mbsc-input mbsc-numpad [mbsc-options]="pinSettings">Set PIN</mbsc-input>
+      </div>
+    </mbsc-form>
+  </mbsc-page>
 </ion-content>
