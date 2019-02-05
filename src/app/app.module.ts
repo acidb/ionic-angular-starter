@@ -1,5 +1,6 @@
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { JsonpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, RouteReuseStrategy, Router } from '@angular/router';
 
@@ -17,6 +18,7 @@ import { MbscModule } from '@mobiscroll/angular';
   imports: [
     MbscModule.forRoot({ angularRouter: Router }),
     FormsModule,
+    JsonpModule,
     BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
