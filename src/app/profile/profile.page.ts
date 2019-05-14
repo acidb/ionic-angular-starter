@@ -1,32 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MbscSelectOptions, MbscDatetimeOptions } from '@mobiscroll/angular';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
-export class ProfilePage implements OnInit {
-  now: Date = new Date();
+export class ProfilePage {
+  now = new Date();
 
-  langData = [{ value: 'en', text: 'English' }, { value: 'de', text: 'Deutsch' }, { value: 'it', text: 'Italiano' }];
+  langData = [{
+    value: 'en',
+    text: 'English'
+  }, {
+    value: 'de',
+    text: 'Deutsch'
+  }, {
+    value: 'it',
+    text: 'Italiano'
+  }];
 
-  languageSettings = {
+  languageSettings: MbscSelectOptions = {
     theme: 'ios',
     data: this.langData
   };
 
-  birthdaySettings = {
+  birthdaySettings: MbscDatetimeOptions = {
     theme: 'ios',
     max: new Date(this.now.getFullYear() - 18, 11, 31)
   };
 
   birthday = new Date(1987, 2, 25);
-
   language = 'en';
-
   gender = 'female';
-
-  ngOnInit() {
-  }
-
 }

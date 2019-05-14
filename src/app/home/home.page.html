@@ -3,10 +3,9 @@
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <mbsc-form>
-    <mbsc-input [(ngModel)]="todoDate" mbsc-calendar>Date</mbsc-input>
+    <mbsc-calendar [(ngModel)]="todoDate">Date</mbsc-calendar>
   </mbsc-form>
   <mbsc-listview [options]="todoList" mbsc-enhance>
     <mbsc-listview-item *ngFor="let item of todoData" data-id="{{item.id}}">

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MbscListviewOptions } from '@mobiscroll/angular';
 
 @Component({
   selector: 'app-home',
@@ -10,23 +11,23 @@ export class HomePage {
 
   todoData = [{
     id: 1,
-    text: "Do the laundry",
+    text: 'Do the laundry',
     checked: true
   }, {
     id: 2,
-    text: "Don't forget mom's birthday!",
+    text: 'Don\'t forget mom\'s birthday!',
     checked: true
   }, {
     id: 3,
-    text: "Buy new shoes"
+    text: 'Buy new shoes'
   }, {
     id: 4,
-    text: "Need ketchup for pizza"
+    text: 'Need ketchup for pizza'
   }];
 
   todoDate = new Date();
 
-  todoList = {
+  todoList: MbscListviewOptions = {
     sortable: {
       handle: 'left'
     },
@@ -39,7 +40,7 @@ export class HomePage {
         action: (event) => {
           this.todoData.push({
             id: ++this.id,
-            text: "New Todo"
+            text: 'New Todo'
           });
         }
       }],
@@ -49,7 +50,7 @@ export class HomePage {
         text: 'Remove',
         icon: 'remove',
         action: (event) => {
-          let item = this.todoData.find(i => i.id == event.target.getAttribute('data-id'));
+          const item = this.todoData.find(i => i.id === event.target.getAttribute('data-id'));
           this.todoData.splice(this.todoData.indexOf(item), 1);
           return false;
         }

@@ -13,8 +13,8 @@ import { SettingsPageModule } from '../settings/settings.module';
 import { HomePageModule } from '../home/home.module';
 
 @NgModule({
-  imports: [ 
-    MbscModule, 
+  imports: [
+    MbscModule,
     IonicModule,
     CommonModule,
     FormsModule,
