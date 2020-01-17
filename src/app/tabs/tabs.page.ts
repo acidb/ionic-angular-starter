@@ -6,7 +6,7 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-  @ViewChild('bn')
+  @ViewChild('bn', {static: false})
   bottomNavigation: any;
 
   ionViewDidEnter() {
