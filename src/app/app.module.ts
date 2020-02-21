@@ -1,6 +1,6 @@
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { JsonpModule } from '@angular/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, RouteReuseStrategy, Router } from '@angular/router';
 
@@ -10,7 +10,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MbscModule } from '@mobiscroll/angular';
+import { MbscModule, mobiscroll } from '@mobiscroll/angular';
+
+mobiscroll.settings = {
+  theme: 'ios'
+};
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +22,7 @@ import { MbscModule } from '@mobiscroll/angular';
   imports: [
     MbscModule.forRoot({ angularRouter: Router }),
     FormsModule,
-    JsonpModule,
+    HttpClientJsonpModule,
     BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
